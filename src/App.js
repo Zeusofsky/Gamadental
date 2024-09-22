@@ -18,44 +18,33 @@ import Hizmetler from "./files/pages/hizmetler";
 import About from "./files/pages/Hakkimda";
 import Iletisim from "./files/pages/iletisim";
 import NavBar from "./files/pages/NavBar";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-
-                function App() {
-
-                    let phoneNumber = "0999 999 99 99"
-
-                    phoneNumber = phoneNumber.split(' ').join('');
-
-
-                    const [menu,setMenu] = useState(false)
-                  return (
-                      <div className="flex justify-start items-center flex-col ">
-
-                          <Router>
-
-                              <NavBar smenu={menu} setsmenu={setMenu}/>
-
-                              <div className={'w-full h-screen'}>
-                                  <Routes>
-                                      <Route  path={'/'} element={<Anasayfa phonen={phoneNumber}  />}/>
-                                      <Route  path={'/services'} element={<Hizmetler phonen={phoneNumber} />}/>
-                                      <Route  path={'/blogs'} element={<Blogs phonen={phoneNumber}/>}/>
-                                      <Route  path={'/about'} element={<About phonen={phoneNumber}/>}/>
-                                      <Route  path={'/contact'} element={<Iletisim phonen={phoneNumber}/>}/>
-                                      <Route  path={'/blogs/blogs1'} element={<Blogs1 phonen={phoneNumber}/>}/>
-                                  </Routes>
-
-                              </div>
-
-                          </Router>
-                          <div className={'relative h-screen'}>
-                              <img className={'absolute right-0 bottom-0 h-[300px] w-[300px]'} src={whatsapp} alt=""/>
-                          </div>
-                          <FloatingWhatsApp statusMessage={'Last Seen: EmreLutfi.com'} chatMessage={'Hello! 🤝\nHow can i help you?'}  phoneNumber={'0553 553 53 53'} accountName={'EmreLutfi.com'} />
-
-                      </div>
-  );
+function App() {
+    let phoneNumber = "0999 999 99 99"
+    phoneNumber = phoneNumber.split(' ').join('');
+    const [menu, setMenu] = useState(false)
+    return (
+        <div className="flex justify-start items-center flex-col ">
+            <Router>
+                <NavBar smenu={menu} setsmenu={setMenu} />
+                <div className={'w-full h-screen'}>
+                    <Routes>
+                        <Route path={'/'} element={<Anasayfa phonen={phoneNumber} />} />
+                        <Route path={'/services'} element={<Hizmetler phonen={phoneNumber} />} />
+                        <Route path={'/blogs'} element={<Blogs phonen={phoneNumber} />} />
+                        <Route path={'/about'} element={<About phonen={phoneNumber} />} />
+                        <Route path={'/contact'} element={<Iletisim phonen={phoneNumber} />} />
+                        <Route path={'/blogs/blogs1'} element={<Blogs1 phonen={phoneNumber} />} />
+                    </Routes>
+                </div>
+            </Router>
+            <div className={'relative h-screen'}>
+                <img className={'absolute right-0 bottom-0 h-[300px] w-[300px]'} src={whatsapp} alt="" />
+            </div>
+            <FloatingWhatsApp statusMessage={'Last Seen: EmreLutfi.com'} chatMessage={'Hello! 🤝\nHow can i help you?'} phoneNumber={'0553 553 53 53'} accountName={'EmreLutfi.com'} />
+        </div>
+    );
 }
 
 export default App;
